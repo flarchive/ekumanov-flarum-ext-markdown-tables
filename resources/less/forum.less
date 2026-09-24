@@ -1,0 +1,116 @@
+// Flarum 2.0 exposes its theme tokens as CSS custom properties on :root —
+// using var(--…) here keeps tables in sync with the user's light/dark scheme
+// switch without us having to fight Less variable scoping.
+
+// ── Rendered post tables ────────────────────────────────────────────
+.Post-body {
+    table {
+        // The table itself is the horizontal scroll container, so a table
+        // wider than the post column scrolls instead of overflowing it. As a
+        // block, its rows get an anonymous inner table box that still lays
+        // out as a normal table (border-collapse is inherited by it).
+        //
+        // This is CSS-only on purpose: post bodies are Mithril m.trust
+        // content, and moving the <table> into a wrapper element breaks
+        // Mithril's later removal of it on edit/redraw.
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+        // Hug the content: narrow tables stay compact instead of stretching a
+        // full-width scroll box, and reasonable-width tables still wrap their
+        // cell text to fit (max-width wins) before falling back to scroll.
+        width: max-content;
+        border-collapse: collapse;
+        margin: 1em 0;
+    }
+
+    th, td {
+        padding: 6px 10px;
+        border: 1px solid var(--control-bg);
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        background: var(--control-bg);
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) td {
+        background: rgba(127, 127, 127, 0.05);
+    }
+}
+
+// ── Tiptap composer table styling ───────────────────────────────────
+.TextEditor .ProseMirror {
+    // fof/rich-text gives the editor the Post-body class too; undo the
+    // rendered-post scroll-box styling, since the editor wraps its tables in
+    // its own .markdown-table-wrapper.
+    table {
+        display: table;
+        max-width: none;
+        border-collapse: collapse;
+        margin: 0.5em 0;
+        overflow: hidden;
+        table-layout: fixed;
+        width: 100%;
+
+        td, th {
+            border: 1px solid var(--control-bg);
+            box-sizing: border-box;
+            min-width: 1em;
+            padding: 6px 8px;
+            position: relative;
+            vertical-align: top;
+
+            > * {
+                margin-bottom: 0;
+            }
+        }
+
+        th {
+            background: var(--control-bg);
+            font-weight: bold;
+            text-align: left;
+        }
+    }
+
+    .markdown-table-wrapper {
+        overflow-x: auto;
+        margin: 0.5em 0;
+    }
+}
+
+// ── Insert-table dropdown form ──────────────────────────────────────
+.MarkdownTablesInsertDropdown {
+    .Dropdown-menu {
+        padding: 12px;
+        min-width: 220px;
+    }
+
+    .Form-group {
+        margin-bottom: 10px;
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--muted-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input.FormControl {
+            width: 100%;
+        }
+    }
+
+    .Button--primary {
+        width: 100%;
+    }
+}
+
+.MarkdownTablesContextMenu {
+    min-width: 200px;
+}
