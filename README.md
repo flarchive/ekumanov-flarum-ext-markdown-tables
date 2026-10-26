@@ -2,16 +2,13 @@
 
 > **Read-only archive of released versions of ekumanov/flarum-ext-markdown-tables.** Not for installation: use [Packagist](https://packagist.org/packages/ekumanov/flarum-ext-markdown-tables) or the [upstream repository](https://github.com/ekumanov/flarum-ext-markdown-tables).
 
-**4** versions archived · Latest: [`v1.0.3`](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.3) · License: `MIT` · Flarum: `^2.0@beta`
+**0** versions archived · Latest: [`v1.0.4`](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.4) · License: `MIT` · Flarum: `^2.0@beta`
 
 ## Archived Versions
 
 | Version | Released | Flarum | Source |
 |---|---|---|---|
-| `v1.0.0` | 2026-04-30 | `^2.0@beta` | [Browse](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.0) |
-| `v1.0.1` | 2026-04-30 | `^2.0@beta` | [Browse](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.1) |
-| `v1.0.2` | 2026-04-30 | `^2.0@beta` | [Browse](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.2) |
-| `v1.0.3` | 2026-09-24 | `^2.0@beta` | [Browse](https://github.com/flarchive/ekumanov-flarum-ext-markdown-tables/tree/archive/v1.0.3) |
+| — | — | — | — |
 
 Catalog entry: [packages/ekumanov-flarum-ext-markdown-tables.json](https://github.com/flarchive/archive-index/blob/main/packages/ekumanov-flarum-ext-markdown-tables.json)
 
